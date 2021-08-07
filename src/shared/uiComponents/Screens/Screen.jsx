@@ -6,7 +6,17 @@ import SingleInput from '../SingleInputWithDescriptor/SingleInputWithDescriptor'
 import RangePicker from '../RangeSelector/RangePicker';
 import OperatorPicker from '../OperatorPicker/OperatorPicker';
 
-export default function Screen({ screenHeading }) {
+export default function Screen({
+  screenHeading,
+  questionChangeHandler,
+  storeVars,
+  screenIdentifier,
+  rangeChangeHandler,
+  operationSelectHandler,
+}) {
+  const decision = storeVars[screenIdentifier].isOneOperationSet;
+  console.log(storeVars[screenIdentifier].isOneOperationSet);
+
   return (
     <>
       <Heading screenHeading={screenHeading} classes={classes} />
@@ -15,14 +25,31 @@ export default function Screen({ screenHeading }) {
           classes={classes}
           Descriptor={'Number of Questions: '}
           inputType={'number'}
+          onChangeHandler={questionChangeHandler}
+          inputValue={storeVars[screenIdentifier].totalQuestions}
+          invalidMessage={storeVars[screenIdentifier].invalidMessage}
+          isNumberValid={storeVars[screenIdentifier].isNumberValid}
         />
 
-        <RangePicker classes={classes} inputType={'number'} />
+        <RangePicker
+          classes={classes}
+          inputType={'number'}
+          onChangeHandler={rangeChangeHandler}
+          operationRange={storeVars[screenIdentifier].operationRange}
+        />
         <OperatorPicker
           classes={classes}
-          operators={['Addition', 'Multiplication', 'Subtraction', 'Division']}
+          operators={storeVars[screenIdentifier].operationsAllowed}
+          operationSelectHandler={operationSelectHandler}
         />
-        <button className={classes.BeginButton}>Begin</button>
+        <button
+          className={
+            decision ? classes.BeginButton : classes.BeginButtonDisabled
+          }
+          disabled={!decision}
+          onClick={() => console.log('Happend')}>
+          Begin
+        </button>
       </div>
     </>
   );

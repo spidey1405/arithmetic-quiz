@@ -1,14 +1,24 @@
 import React from 'react';
 
-export default function RangePicker({ classes, operators }) {
+export default function RangePicker({
+  classes,
+  operators,
+  operationSelectHandler,
+}) {
   return (
     <div className={classes.RowComponent}>
       <p className={classes.Description}>Operators Allowed: </p>
-      {operators.map((element, index) => {
+      {Object.keys(operators).map((element, index) => {
+        const active = operators[element];
         return (
           <p
             key={'Range_PICKER_' + index}
-            className={classes.OperatorButtonActive}>
+            onClick={() => operationSelectHandler(element)}
+            className={
+              active
+                ? classes.OperatorButtonActive
+                : classes.OperatorButtonPassive
+            }>
             {element}
           </p>
         );
