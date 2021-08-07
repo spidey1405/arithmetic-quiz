@@ -1,0 +1,71 @@
+@import './variables';
+.QuizHeading {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 2px #cccccc;
+}
+
+.Form {
+  background-color: $form-background-color;
+  padding: 5rem;
+}
+
+.RowComponent {
+  display: flex;
+  flex-direction: row;
+  margin: 0.94rem 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.InputBox {
+  max-width: 3rem;
+
+  border: none;
+  outline: none;
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.OperatorButtonActive,
+.OperatorButtonPassive {
+  font-size: 1.43rem;
+  border-radius: 20%;
+  margin: 0 0.4rem;
+  padding: 0 0.41rem;
+}
+.OperatorButtonActive {
+  background-color: $operator-buttons-active-bg;
+  color: $operator-buttons-active;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.96);
+  }
+}
+
+.OperatorButtonPassive {
+  background-color: $operator-buttons-passive-bg;
+  color: $operator-buttons-passive;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.96);
+  }
+}
+
+.BeginButton {
+  width: 100%;
+  text-align: center;
+  margin-top: 2.3rem;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.12);
+    cursor: pointer;
+  }
+}

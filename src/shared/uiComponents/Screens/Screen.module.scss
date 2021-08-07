@@ -1,0 +1,11 @@
+@import '../../css/components';
+
+.Description,
+.DescriptionShort {
+  padding: 0;
+  margin: 0 0.6rem;
+}
+
+.DescriptionShort {
+  max-width: fit-content;
+}
