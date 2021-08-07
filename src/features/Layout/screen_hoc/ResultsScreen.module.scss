@@ -1,0 +1,79 @@
+@import '../../../shared/css/components';
+@import '../../../shared/css/variables';
+.Heading {
+  padding: 0;
+}
+
+.quizSummary {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonWidthAdjustment {
+  width: 20%;
+  padding: 0.52rem 0.11rem;
+  margin-bottom: 1rem;
+}
+
+.SummaryHeading {
+  font-size: 2rem;
+  padding: 0;
+}
+
+.SummaryInfoPage {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: px;
+    background: #c9cacc;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background: #78797a;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #3d5585;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #01143b;
+  }
+}
+.Question {
+  width: 80%;
+  border: 1px solid #ddd;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.92rem;
+
+  &__questionNumber {
+    font-weight: 700;
+    font-size: 2rem;
+
+    &_questionString {
+      font-style: oblique;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  &__correctAnswerUser {
+    color: $correct-answer-color;
+  }
+
+  &__incorrectAnswerUser {
+    color: $incorrect-answer-color;
+  }
+}

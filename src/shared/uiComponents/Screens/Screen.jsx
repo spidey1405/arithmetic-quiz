@@ -13,10 +13,9 @@ export default function Screen({
   screenIdentifier,
   rangeChangeHandler,
   operationSelectHandler,
+  buttonClickHandler,
 }) {
   const decision = storeVars[screenIdentifier].isOneOperationSet;
-  console.log(storeVars[screenIdentifier].isOneOperationSet);
-
   return (
     <>
       <Heading screenHeading={screenHeading} classes={classes} />
@@ -47,7 +46,7 @@ export default function Screen({
             decision ? classes.BeginButton : classes.BeginButtonDisabled
           }
           disabled={!decision}
-          onClick={() => console.log('Happend')}>
+          onClick={buttonClickHandler}>
           Begin
         </button>
       </div>
